@@ -1,0 +1,37 @@
+# Ignorar diretórios de ambientes virtuais
+venv/
+env/
+.venv/
+.env/
+
+# Ignorar arquivos compilados do Python
+__pycache__/
+*.py[cod]
+
+# Ignorar arquivos de configuração do editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de pacotes
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Ignorar arquivos de cache de pacotes
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignorar arquivos de chaves ou segredos
+*.pem
+*.key
+.env
