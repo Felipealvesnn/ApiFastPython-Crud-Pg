@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: felipe
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: teste
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # app:
+  #   build:
+  #     context: ./CrudComSqlAlchemi
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     DB_URL: postgresql+asyncpg://felipe:123456@db:5432/teste
+  #   depends_on:
+  #     - db
+  #   volumes:
+  #     - ./CrudComSqlAlchemi:/app
+  #   command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+volumes:
+  postgres_data:
