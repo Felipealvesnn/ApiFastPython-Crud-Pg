@@ -19,5 +19,8 @@ async def criar_curso(curso: CursoSchema, db: AsyncSession = Depends(get_sesion)
 
 @router.get("/", response_model=List[CursoSchema])
 async def listar_cursos(db: AsyncSession = Depends(get_sesion)):
-    consulta = await db.execute(select(CursoModel))
-    return consulta.scalars().all()
+    async with db as session:
+        query = select(CursoModel)
+        result = await session.execute(query)
+        cursos = result.scalars().all()
+        return cursos
