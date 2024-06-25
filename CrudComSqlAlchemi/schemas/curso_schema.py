@@ -9,5 +9,3 @@ class CursoSchema(SCbaseModel):
 
     class Config:
         orm_mode = True
-
-cursobase = CursoSchema()
